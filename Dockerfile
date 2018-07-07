@@ -1,5 +1,7 @@
 FROM rocker/rstudio 
 
+LABEL maintainer="mail@gdietz.de"
+
 ADD . /init.d/
 
 RUN apt-get update \
