@@ -53,9 +53,10 @@ RUN install2.r --error \
     tensorflow \
     parsedate \
     plotly \
-    h2o
-
-RUN Rscript -e 'source("https://bioconductor.org/biocLite.R"); biocLite(c("GenomicRanges", "gRbase"))'
+    h2o \
+    BiocManager
 
 RUN Rscript -e 'update.packages(ask=FALSE, repos="https://cran.r-project.org")'
+
+RUN Rscript -e 'BiocManager::install(c("GenomicRanges", "gRbase"), ask = FALSE)'
 
