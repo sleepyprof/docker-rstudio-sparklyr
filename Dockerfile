@@ -57,7 +57,8 @@ RUN install2.r --error \
     BiocManager \
     shinythemes \
     shinyjs \
-    shinycssloaders
+    shinycssloaders \
+    rjson
 
 RUN Rscript -e 'update.packages(ask=FALSE, repos="https://cran.r-project.org")'
 
